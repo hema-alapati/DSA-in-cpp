@@ -24,6 +24,7 @@ int main(){
 }
 //using bit shifting
 #include <bits/stdc++.h>
+using namespace std;
 int main(){
     int a,b;
     cin>>a>>b;
@@ -33,5 +34,6 @@ int main(){
         a=a^b;
         b=carry<<1;
     }
+    cout<<a;
     return 0;
 }
