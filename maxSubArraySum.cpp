@@ -20,10 +20,12 @@ int maxSumOptimal(int arr[],int n){
     int maxSum=1e-9,sum=0;
     for(int i=0;i<n;i++){
         sum=sum+arr[i];
-        if(sum<0){
-            sum=0;
-        }
-        if(sum>maxSum) maxSum=sum;
+        maxSum=max(maxSum,sum);
+        sum=max(sum,0);
+//         if(sum<0){
+//             sum=0;
+//         }
+//         if(sum>maxSum) maxSum=sum;
     }
     return maxSum;
 }
