@@ -49,7 +49,25 @@ void subArraySumK(int arr[], int n, int sum)
     cout << "No subarray found";
     return;
 }
-
+//Kadane's Algorithm gfg passed solution
+// class Solution{
+//     public:
+//     // arr: input array
+//     // n: size of array
+//     //Function to find the sum of contiguous subarray with maximum sum.
+//     long long maxSubarraySum(int arr[], int n){
+//         long long maxSum=arr[0];
+//         long long itersum=0;
+//         for(int i=0;i<n;i++){
+//             itersum+=arr[i];
+//             if(itersum>maxSum) maxSum=itersum;
+//             if(itersum<0) itersum=0;
+//             // maxSum=max(maxSum,itersum);
+//             // itersum=max(itersum,0);
+//         }
+//         return maxSum;
+//     }
+// };
 int main(){
     int arr[]={-2,1,-3,4,-1,2,1,-5,4};
     int n=sizeof(arr)/sizeof(int);
