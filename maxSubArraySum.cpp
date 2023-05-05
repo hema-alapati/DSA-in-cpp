@@ -30,10 +30,34 @@ int maxSumOptimal(int arr[],int n){
     return maxSum;
 }
 
+//for returning those indices
+void subArraySumK(int arr[], int n, int sum)
+{
+    int currentSum, i, j;
+    for (i = 0; i < n; i++) {
+        currentSum = arr[i];
+        for (j = i + 1; j <= n; j++) {
+            if (currentSum == sum) {
+                cout << " and it is found between indexes " << i<< " and " << j - 1 << endl;
+                return;
+            }
+            if (currentSum > sum || j == n)
+                break;
+            currentSum = currentSum + arr[j];
+        }
+    }
+    cout << "No subarray found";
+    return;
+}
+
 int main(){
     int arr[]={-2,1,-3,4,-1,2,1,-5,4};
     int n=sizeof(arr)/sizeof(int);
-    cout<<maxSumFromSubArray(arr,n)<<endl;
-    cout<<maxSumOptimal(arr,n);
+    int val2=maxSumFromSubArray(arr,n);
+    cout<<val2<<endl;
+//     cout<<maxSumOptimal(arr,n);
+    int val=maxSumOptimal(arr,n);
+    cout<<"The maximum sum is: "<<val;
+    subArraySumK(arr,n,val);
     return 0;
 }
