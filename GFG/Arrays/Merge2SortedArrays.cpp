@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-vector<int> mergeArray(int arr1[], int arr2[], int n1, int n2) {
+vector<int> mergeArray(int (&arr1)[], int (&arr2)[], int n1, int n2) {
     vector<int> v;
     for (int i = 0; i < n1; i++) {
         v.push_back(arr1[i]);
@@ -19,6 +19,20 @@ vector<int> mergeArray(int arr1[], int arr2[], int n1, int n2) {
             }
         }
     }
+    int k=0;
+    while(k!=n1){
+        arr1[k]=v[k];
+        k++;
+    }
+    int l=0;
+    while(k!=n1+n2){
+        arr2[l]=v[k];
+        k++;
+        l++;
+    }
+    
+    
+    
     return v;
 }
 
@@ -29,8 +43,19 @@ int main() {
     int arr2[] = {2, 3, 9};
     n2 = sizeof(arr2) / sizeof(arr2[0]);
     vector<int> a = mergeArray(arr1, arr2, n1, n2);
-    for (auto i : a) {
-        cout << i << " ";
+    // for (auto i : a) {
+    //     cout << i << " ";
+    // }
+    
+    cout<<"Elements of 1st array are: ";
+    for(int i = 0; i<n1; i++) {
+        cout << arr1[i] << " " ;
     }
+    cout<<"\nElements of 2nd array are: ";
+    for(int i = 0; i<n2; i++) {
+        cout << arr2[i] << " " ;
+    }
+    
+    cout<<endl;
     return 0;
 }
