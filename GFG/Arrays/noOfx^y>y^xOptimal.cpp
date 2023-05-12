@@ -1,5 +1,4 @@
-//driver code in:
-//https://github.com/hema-alapati/DSA-in-cpp/new/main/GFG/Arrays
+//driver code in gfg
  
 
 class Solution{
